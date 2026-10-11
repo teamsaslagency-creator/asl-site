@@ -1,0 +1,75 @@
+/* A connected editorial journey: architecture, craft, proof, intelligence. */
+.asl-home{--story-metal:#d8c8cc;--story-red:#b6375b}
+.asl-home .hero-atmosphere::before{background:linear-gradient(90deg,#080709 2%,#080709d9 30%,#08070922 67%),url('/asl-intelligence-chamber-v1.webp') 70% center/cover no-repeat}
+.asl-home .orbital-light,.asl-home .orbital-line{display:none}
+.asl-home h1,.asl-home .intelligence-heading h2,.asl-home .why-story-heading h2,.asl-home .contact-banner h2{font-family:var(--font-tech),sans-serif;letter-spacing:-.055em;font-weight:600}
+.asl-home .section-kicker,.studio-edition,.workflow-label,.intelligence-modebar,.why-story-card>div>span,.why-foundation>span{font-family:var(--font-tech),sans-serif;letter-spacing:.09em;text-transform:uppercase}
+.asl-home .section-kicker{font-size:11px;color:#c68b9f;margin-bottom:22px}
+.asl-home .description{font-size:15px;max-width:360px}
+.asl-home .primary-link{font-size:12px}
+.story-navigation{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:9px}
+.story-navigation a{position:relative;display:flex;align-items:center;justify-content:flex-end;gap:8px;width:33px;min-height:24px;color:#947682;font-size:9px}
+.chapter-dot{width:5px;height:5px;border:1px solid #986172;transform:rotate(45deg)}
+.story-navigation a[aria-current]{color:#f4dce5}.story-navigation a[aria-current] .chapter-dot{background:#e395ae;box-shadow:0 0 12px #d74172}
+.chapter-name{position:absolute;right:40px;white-space:nowrap;opacity:0;pointer-events:none;background:#160c12;padding:8px 12px;border:1px solid #9d61734a;transform:translateX(5px);transition:opacity .2s,transform .2s}
+.story-navigation a:hover .chapter-name,.story-navigation a:focus-visible .chapter-name{opacity:1;transform:none}
+.asl-home .studio-section{padding-top:75px;padding-bottom:95px}
+.asl-home .studio-section::before{opacity:.65;background:linear-gradient(90deg,#09070a 10%,#09070ad9 43%,#09070a11),linear-gradient(0deg,#09070a,transparent 65%),url('/asl-burgundy-material-v1.webp') right center/cover no-repeat}
+.asl-home .studio-edition p{font-size:11px}.asl-home .studio-edition>span{font-size:11px}
+.asl-home .studio-manifesto{font-size:clamp(48px,6.7vw,100px)}
+.asl-home .studio-introduction{margin-top:48px;padding-bottom:48px}
+.asl-home .studio-introduction p:nth-child(2){font-size:14px;max-width:490px;line-height:1.85}
+.asl-home .studio-principles p{font-size:13px;line-height:1.85}.asl-home .studio-principle-index{font-size:10px}
+.asl-home .services-heading>p,.asl-home .service-stage-copy>p,.asl-home .service-description p{font-size:14px}
+.asl-home .home-section-heading>div>p:not(.section-kicker){font-size:14px;line-height:1.8}
+.asl-home .intelligence-lab,.asl-home .why-story{padding-top:110px;padding-bottom:110px;border-top:1px solid #b4979725;position:relative}
+.intelligence-heading,.why-story-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:65px;margin-bottom:50px}
+.asl-home .intelligence-heading h2,.asl-home .why-story-heading h2{font-size:clamp(44px,5.3vw,78px);line-height:1.05}
+.intelligence-heading h2 span,.why-story-heading h2 span{color:#bc758f}
+.intelligence-heading>p,.why-story-heading>p{font-size:14px;line-height:1.85;color:#b9a8b1;max-width:350px;margin-bottom:5px}
+.intelligence-console{border:1px solid #95607555;background:linear-gradient(135deg,#200c17,#0b080d 55%);position:relative;isolation:isolate}
+.intelligence-modebar{display:flex;justify-content:space-between;gap:20px;padding:18px 25px;border-bottom:1px solid #b4979725;color:#ba8c9e;font-size:10px}
+.intelligence-tabs{display:flex;border-bottom:1px solid #b4979725}
+.intelligence-tabs button{flex:1;display:flex;gap:18px;align-items:center;text-align:left;padding:22px 25px;border:0;border-right:1px solid #b4979725;background:transparent;color:#a3949c;font-size:14px;cursor:pointer}
+.intelligence-tabs button[aria-selected=true]{background:#54203544;color:#f1dce5;box-shadow:inset 0 -2px #b6375b}.intelligence-tabs small{color:#bb748d;font-size:10px}
+.intelligence-example{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;min-height:370px;padding:30px 35px;gap:12px}
+.workflow-label{color:#c7879e;font-size:10px;display:block;margin-bottom:22px}
+.workflow-input>p{font-size:19px;line-height:1.65;max-width:330px;margin:0 0 22px}
+.workflow-tools{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:30px}.workflow-tools span{font-size:10px;border:1px solid #af6d8440;padding:7px 9px;color:#c5adb8}
+.workflow-input .primary-link:disabled{opacity:.65;cursor:wait;transform:none}
+.workflow-engine{position:relative;aspect-ratio:1;display:grid;place-items:center;min-width:0}
+.workflow-engine img{width:90%;height:90%;object-fit:contain;mix-blend-mode:screen;mask-image:radial-gradient(ellipse,#000 40%,transparent 72%)}
+.workflow-engine svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:-1}.workflow-wire{fill:none;stroke:#bb658650;stroke-width:1}.workflow-signal{fill:none;stroke:#ef9ab9;stroke-width:2;stroke-dasharray:15 700;opacity:0}
+.workflow-engine>span{position:absolute;bottom:0;font-size:10px;color:#b88b9e}
+.intelligence-console[data-step='1'] .workflow-signal,.intelligence-console[data-step='2'] .workflow-signal{opacity:1;animation:workflow-travel 1.4s linear infinite}
+.workflow-output{border-left:1px solid #b4979725;padding-left:30px;min-height:240px}.workflow-status{font-size:12px;color:#c5869e;margin-bottom:22px}.workflow-result{font-size:14px;color:#a998a3;line-height:1.85}.workflow-result strong{display:block;font-size:18px;font-weight:500;color:#f1dce5;line-height:1.5}.workflow-result p{margin:14px 0}.workflow-review{font-size:11px;color:#c99bac}.output-ready .workflow-result{animation:workflow-result .6s ease both}
+.intelligence-note{font-size:11px;line-height:1.8;color:#9c8291;margin-top:20px;max-width:700px}
+.asl-home .why-story{display:block;background:transparent}
+.why-story-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:24px}
+.why-story-card{position:relative;overflow:clip;border:1px solid #b4979735;min-height:340px;background:#110a10}
+.why-story-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.why-story-card::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#110a10 2%,#110a10cc 25%,transparent 80%);pointer-events:none}
+.why-story-card>div:last-child{position:relative;z-index:2;padding:32px;max-width:480px}.why-story-card>div>span,.why-foundation>span{font-size:10px;color:#d096ad}
+.asl-home .why-story-card h3{font-size:30px;line-height:1.13;letter-spacing:-.045em;margin:20px 0 16px}.why-story-card p{font-size:14px;line-height:1.8;color:#bfaab6;margin:0}
+.why-craft-card{grid-row:span 2;min-height:704px;display:flex;align-items:flex-end}.why-craft-card img{object-position:center 25%}
+.why-engineering-card{display:flex;align-items:flex-end;background:linear-gradient(125deg,#29111f,#100a10)}
+.engineering-planes{position:absolute;right:5%;top:-55px;width:210px;height:200px;transform:rotate(-20deg);perspective:700px}
+.engineering-planes i{position:absolute;inset:25px;border:1px solid #ca90a86b;transform:rotateX(55deg) rotateZ(25deg);background:linear-gradient(135deg,#86365477,#170b1888);box-shadow:0 10px 35px #0008}.engineering-planes i:nth-child(2){translate:0 28px}.engineering-planes i:nth-child(3){translate:0 56px}.engineering-planes i:nth-child(4){translate:0 84px}
+.why-intelligence-card{display:flex;align-items:flex-end}.why-intelligence-card img{width:57%;left:auto;right:-3%;object-fit:contain;opacity:.65}.why-intelligence-card::after{background:linear-gradient(90deg,#110a10 12%,#110a10aa 70%,transparent)}
+.why-foundation{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.4fr;gap:16px 50px;padding:40px 0 10px;border-top:1px solid #b4979735;margin-top:15px}.why-foundation>span{grid-column:1/-1}.asl-home .why-foundation h3{font-size:36px;margin:0}.why-foundation p{font-size:14px;line-height:1.85;color:#bfaab6;margin:0}.why-foundation a{grid-column:2;font-size:12px;justify-self:start}
+.asl-home .process-heading .section-kicker{display:block}.asl-home .process-heading>p,.asl-home .process-narration p{font-size:13px}.asl-home .process-deliverable{font-size:11px}
+.technology-strip{display:flex;gap:45px;align-items:center;padding-top:35px;padding-bottom:35px;border-top:1px solid #b4979725;border-bottom:1px solid #b4979725}
+.technology-strip>p{font-size:14px;white-space:nowrap;color:#d6b5c4}.technology-strip>div{display:flex;flex-wrap:wrap;gap:13px 24px}.technology-strip span{font-family:var(--font-tech);font-size:13px;color:#a28c97}
+.asl-home .contact-section{padding-top:0;gap:65px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#10080d}.contact-banner{position:relative;grid-column:1/-1;height:530px;overflow:clip;margin:0 -4.3%;border-bottom:1px solid #b4979735}
+.contact-banner img{width:100%;height:100%;object-fit:cover;object-position:center}.contact-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#10080dba,transparent 70%),linear-gradient(0deg,#10080d,transparent 28%)}
+.contact-banner>div{position:absolute;z-index:1;left:5%;top:18%}.asl-home .contact-banner h2{font-size:clamp(65px,7.7vw,115px);line-height:1.04}.contact-banner h2 span{color:#dda7bb}
+.asl-home .contact-intro>.section-kicker{display:block}.asl-home .contact-intro h3{font-size:clamp(30px,3.2vw,47px);line-height:1.17;margin:25px 0}.asl-home .contact-intro>p:not(.section-kicker){font-size:14px;line-height:1.9}.contact-form-area label{font-size:12px}.asl-home .contact-note,.asl-home .contact-placeholder{font-size:11px}
+.sections-motion .intelligence-lab.seen .intelligence-console,.sections-motion .why-story.seen .why-story-card{animation:story-rise .9s cubic-bezier(.22,1,.36,1) both}.sections-motion .why-story.seen .why-story-card:nth-child(2){animation-delay:.12s}.sections-motion .why-story.seen .why-story-card:nth-child(3){animation-delay:.24s}
+.sections-motion .why-story.in-view .engineering-planes{animation:engineering-float 8s ease-in-out infinite}
+@keyframes workflow-travel{to{stroke-dashoffset:-715}}@keyframes workflow-result{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}@keyframes story-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}@keyframes engineering-float{50%{translate:0 -12px}}
+@media(max-width:1100px){.story-navigation{display:none}.intelligence-example{padding:25px;grid-template-columns:1fr .75fr 1fr}.workflow-input>p{font-size:16px}.workflow-output{padding-left:18px}.intelligence-heading,.why-story-heading{gap:30px}.why-story-card>div:last-child{padding:26px}.asl-home .why-story-card h3{font-size:26px}}
+@media(max-width:750px){.intelligence-heading,.why-story-heading{display:block}.intelligence-heading>p,.why-story-heading>p{margin-top:24px;max-width:450px}.intelligence-example{grid-template-columns:1fr 1fr}.workflow-engine{grid-column:1/-1;grid-row:2;width:240px;justify-self:center}.workflow-output{grid-column:2;grid-row:1}.intelligence-tabs button{font-size:12px;gap:10px;padding:18px 12px}.intelligence-modebar{font-size:8px;padding:15px;flex-wrap:wrap}.why-story-grid{gap:16px}.why-craft-card{min-height:720px}.why-story-card p{font-size:12px}.why-foundation{gap:18px}.technology-strip{display:block}.technology-strip>p{margin-bottom:22px}.contact-banner{height:430px}}
+@media(max-width:650px){.asl-home .hero-atmosphere::before{background:linear-gradient(180deg,#080709ee 5%,#08070933 62%,#080709),url('/asl-intelligence-chamber-v1.webp') 72% center/auto 100% no-repeat}.asl-home .description{font-size:13px}.asl-home .studio-section{padding-top:45px;padding-bottom:65px}.asl-home .studio-edition>span{font-size:10px}.asl-home .studio-manifesto{font-size:clamp(37px,10vw,65px)}.asl-home .studio-principles p{font-size:13px}.asl-home .studio-introduction p:nth-child(2){font-size:13px}.asl-home .intelligence-lab,.asl-home .why-story{padding-top:70px;padding-bottom:70px}.asl-home .intelligence-heading h2,.asl-home .why-story-heading h2{font-size:43px}.intelligence-heading,.why-story-heading{margin-bottom:35px}.intelligence-heading>p,.why-story-heading>p{font-size:13px}.intelligence-example{display:flex;flex-direction:column;padding:25px 20px;gap:28px;align-items:stretch}.workflow-input>p{max-width:none}.workflow-engine{width:240px;align-self:center}.workflow-output{padding:25px 0 0;border-left:0;border-top:1px solid #b4979735;min-height:200px}.intelligence-tabs button{font-size:11px;flex-direction:column;align-items:flex-start;gap:8px}.workflow-result{font-size:13px}.why-story-grid{grid-template-columns:1fr}.why-craft-card{grid-row:auto;min-height:580px}.why-engineering-card,.why-intelligence-card{min-height:350px}.why-story-card p{font-size:13px}.why-foundation{display:block;padding-top:30px}.why-foundation>span{display:block;margin-bottom:20px}.asl-home .why-foundation h3{font-size:30px;margin-bottom:20px}.why-foundation p{font-size:13px;margin-bottom:25px}.technology-strip span{font-size:12px}.asl-home .contact-section{gap:35px;padding-bottom:65px}.contact-banner{height:430px;margin:0 -7%}.contact-banner img{object-position:62% center}.contact-banner>div{left:7%;top:12%}.asl-home .contact-banner h2{font-size:62px}.asl-home .contact-intro h3{font-size:31px}.asl-home .process-heading>p{font-size:12px}.asl-home .process-narration p{font-size:11px}.asl-home .process-deliverable{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.asl-home .workflow-signal,.asl-home .engineering-planes,.asl-home .intelligence-console,.asl-home .why-story-card,.asl-home .workflow-result{animation:none!important}.chapter-name{transition:none}}
+@media(max-width:650px){.asl-home .contact-section{grid-template-columns:1fr}}
+@media(min-width:651px) and (max-width:1100px){.asl-home .description{max-width:260px;font-size:13px}}

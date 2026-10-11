@@ -1,0 +1,22 @@
+/* One continuous contact scene: image, invitation, and project brief. */
+.asl-home .contact-section{position:relative;isolation:isolate;overflow:clip;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:clamp(35px,5vw,85px);padding-top:90px;padding-bottom:90px;background:#10090e;min-height:770px}
+.asl-home .contact-section::before{display:none}
+.contact-background{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.contact-background img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.85}
+.contact-background::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0d090ec9 0%,#10090e4d 48%,#10090e70 100%),linear-gradient(0deg,#10090e 0%,#10090e5c 34%,#10090e15 76%)}
+.asl-home .contact-intro{padding-top:20px;position:relative;z-index:1}
+.asl-home .contact-intro>.section-kicker{display:block;margin-bottom:28px;font-size:10px;letter-spacing:.12em}
+.asl-home .contact-intro h2{font:600 clamp(48px,5.4vw,82px)/1.04 var(--font-tech),sans-serif;letter-spacing:-.055em;max-width:620px;text-shadow:0 3px 30px #0005}
+.asl-home .contact-intro h2 span{color:#dda7bb}
+.asl-home .contact-intro h3{font-size:clamp(22px,2vw,29px);line-height:1.25;font-weight:500;letter-spacing:-.035em;margin:42px 0 0;max-width:440px}
+.asl-home .contact-intro>p:not(.section-kicker){font-size:13px;line-height:1.9;color:#d5c4cc;margin:22px 0 0;max-width:420px}
+.asl-home .contact-form-area{position:relative;z-index:1;padding:34px 36px 29px;background:#130d13db;backdrop-filter:blur(12px);border:1px solid #d19aae38;box-shadow:0 20px 70px #0003;align-self:start}
+.asl-home .contact-form-area label{font-size:11px;color:#ead9e2;margin-bottom:24px;gap:10px}
+.asl-home .contact-form-area input,.asl-home .contact-form-area select,.asl-home .contact-form-area textarea{border-color:#c296aa60;color:#f1e8ed;font-size:13px}
+.asl-home .contact-form-area input::placeholder,.asl-home .contact-form-area textarea::placeholder{color:#b8a4ae;font-size:11px}
+.asl-home .contact-note{font-size:10px;color:#bba6b1;margin-bottom:23px}
+.asl-home .contact-placeholder{font-size:10px;color:#bba6b1}
+.asl-home .contact-address{font-size:21px}
+@media(min-width:651px) and (max-width:1000px){.asl-home .contact-section{gap:30px;padding-top:65px;padding-bottom:65px;grid-template-columns:45% minmax(0,1fr)}.asl-home .contact-intro h2{font-size:49px}.asl-home .contact-form-area{padding:28px 24px}.contact-field-row{gap:16px}.asl-home .contact-intro h3{font-size:23px}}
+@media(max-width:650px){.asl-home .contact-section{grid-template-columns:1fr;gap:32px;padding-top:55px;padding-bottom:55px;min-height:0}.contact-background img{height:560px;object-position:57% center;opacity:.9}.contact-background::after{background:linear-gradient(90deg,#10090e99,#10090e33),linear-gradient(0deg,#10090e 0%,#10090e 40%,#10090e30 85%)}.asl-home .contact-intro{padding-top:0}.asl-home .contact-intro h2{font-size:clamp(43px,12vw,62px)}.asl-home .contact-intro>.section-kicker{margin-bottom:22px;font-size:9px}.asl-home .contact-intro h3{font-size:23px;margin-top:30px}.asl-home .contact-intro>p:not(.section-kicker){font-size:12px;margin-top:18px}.asl-home .contact-form-area{padding:25px 20px;background:#130d13e8}.contact-field-row{grid-template-columns:1fr;gap:0}.asl-home .contact-form-area label{margin-bottom:23px}.asl-home .contact-form-area input,.asl-home .contact-form-area select,.asl-home .contact-form-area textarea{font-size:16px}.asl-home .contact-address{font-size:20px}}
+@supports not (backdrop-filter:blur(12px)){.asl-home .contact-form-area{background:#130d13f5}}

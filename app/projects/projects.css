@@ -1,0 +1,74 @@
+.projects-page.projects-premium{--home-line:#b280982b;--home-muted:#bba7b1;background:radial-gradient(ellipse at 95% 40%,#4b10221c,transparent 45%),#09070a;color:#f0e9e5}
+.projects-exhibition{position:relative;isolation:isolate;overflow:clip;background:radial-gradient(ellipse at 105% 37%,#50152824,transparent 49%),radial-gradient(ellipse at -10% 76%,#4213271c,transparent 48%),#09070a}
+.projects-exhibition::before{content:'';position:absolute;inset:0 0 auto;height:1100px;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#09070aed 4%,#09070ab3 42%,#09070a60 83%),url('/asl-intelligence-chamber-v1.webp') 70% top/cover no-repeat;mask-image:linear-gradient(#000 0%,#000 33%,#0009 58%,transparent 100%)}
+.projects-exhibition::after{content:'';position:absolute;inset:350px 0 0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,transparent 2.4%,#db9cb51c 2.4%,#db9cb51c calc(2.4% + 1px),transparent calc(2.4% + 1px),transparent 97.6%,#db9cb51c 97.6%,#db9cb51c calc(97.6% + 1px),transparent calc(97.6% + 1px));mask-image:linear-gradient(transparent,#000 15%,#000 80%,transparent)}
+.projects-opening{position:relative}
+.projects-premium .brand-dot{background:#a93d65;width:7px;height:7px}
+.projects-premium .projects-introduction{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,1fr);align-items:end;gap:8%;padding-top:70px;padding-bottom:60px;min-height:460px}
+.projects-eyebrow{font:11px var(--font-tech),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#c18a9f;margin:0 0 28px}
+.projects-premium .projects-introduction h1{font:600 clamp(50px,6vw,88px)/1.05 var(--font-display),sans-serif;letter-spacing:-.055em;margin:0;text-wrap:balance}
+.projects-introduction h1>span{color:#c399ae}
+.projects-intro-lead{font-size:17px;line-height:1.65;color:#c4b1bc;margin:30px 0 0}
+.projects-intro-note{max-width:350px;padding-bottom:8px}
+.projects-collection-number{display:flex;align-items:center;gap:20px;font:500 48px/1 var(--font-tech),sans-serif;color:#d2a7bb;font-variant-numeric:tabular-nums}
+.projects-collection-number small{font:11px/1.6 var(--font-tech),sans-serif;max-width:110px;color:#d0bdc7;letter-spacing:.04em}
+.projects-intro-note>p{font-size:14px;line-height:1.9;color:#bba7b2;margin:25px 0 22px}
+.projects-collection-link{display:inline-flex;align-items:center;gap:35px;min-height:44px;font-size:12px;color:#e0c0d0}
+.projects-premium .projects-index{padding-top:58px;padding-bottom:80px;scroll-margin-top:25px}
+.projects-collection-heading{display:flex;justify-content:space-between;align-items:end;gap:35px}
+.projects-collection-heading .projects-eyebrow{margin-bottom:16px}
+.projects-premium .projects-collection-heading h2{font:500 clamp(29px,2.9vw,42px)/1.2 var(--font-display),sans-serif;letter-spacing:-.045em;margin:0}
+.projects-collection-heading>p{font-size:13px;line-height:1.8;color:#b8a3af;margin:0 0 4px}
+.projects-premium .projects-filters{gap:10px;margin:34px 0 16px;border-bottom:1px solid #b280982b;padding-bottom:17px}
+.projects-premium .projects-filters button{min-height:44px;padding:0 19px;border-radius:999px;color:#bca6b2;border-color:#ab758f35;background:#21101938;font:12px var(--font-tech),sans-serif}
+.projects-premium .projects-filters button[aria-pressed=true]{background:linear-gradient(140deg,#60213b,#361524);border-color:#bf839e80;color:#f2dfe9}
+.projects-premium .projects-count{font-size:11px;color:#b38b9e;margin:0 0 48px;font-variant-numeric:tabular-nums}
+.projects-premium .projects-grid{gap:55px 35px}
+.projects-premium .portfolio-image{background:#160d12;border-color:#ae778e45;box-shadow:0 15px 35px #0003}
+.projects-premium .portfolio-image>span{background:#361220e8;color:#efdae4;border-color:#c38aa65c;font-size:11px}
+.projects-premium .portfolio-project-copy{padding-top:23px}
+.projects-premium .portfolio-project-copy>p:first-child{font:10px var(--font-tech),sans-serif;letter-spacing:.06em;color:#c18b9f;margin-bottom:12px}
+.projects-premium .portfolio-project-copy h2{font:600 clamp(25px,2.3vw,34px)/1.15 var(--font-display),sans-serif;letter-spacing:-.045em;color:#f0e8e5}
+.projects-premium .portfolio-project-copy>p:not(:first-child){font-size:14px;line-height:1.85;color:#bda8b3;max-width:490px}
+.projects-premium .portfolio-project-copy>div{padding-top:8px;border-top:1px solid #a8768c29;margin-top:22px}
+.projects-premium .portfolio-project-copy button{font-size:12px;color:#dfb1c7;min-height:44px}
+.projects-premium .portfolio-project-copy a{font-size:11px;color:#bda2b0;min-height:44px;display:inline-flex;align-items:center}
+.projects-invitation{position:relative;isolation:isolate;padding-top:70px;padding-bottom:70px;border-top:1px solid #b280982b;overflow:clip;background:#0d090d}
+.projects-invitation::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#0d090df5 5%,#0d090da6 44%,#0d090d15 100%),linear-gradient(0deg,#0d090d8c,transparent),url('/asl-connected-hands-v1.webp') 68% center/cover no-repeat}
+.projects-premium .projects-invitation h2{font:500 clamp(38px,4.5vw,66px)/1.08 var(--font-display),sans-serif;letter-spacing:-.05em;margin:0}
+.projects-invitation h2 span{color:#c995ae}
+.projects-invitation>div>p:not(.projects-eyebrow){font-size:14px;line-height:1.85;color:#cab6c1;margin:24px 0}
+.projects-invitation-link{display:inline-flex;align-items:center;justify-content:space-between;gap:45px;min-height:48px;padding:0 23px;background:linear-gradient(135deg,#60203b,#351220);border:1px solid #bc819e65;border-radius:999px;color:#f1dde8;font-size:12px}
+.projects-premium a:focus-visible,.projects-premium button:focus-visible{outline:2px solid #d4a0b9;outline-offset:5px}
+@media(hover:hover){.projects-premium .projects-filters button:hover{color:#f4e4ec;border-color:#c38aa675}.projects-invitation-link:hover{background:#60203b}}
+@media(min-width:651px) and (prefers-reduced-motion:no-preference){.projects-intro-copy{animation:projects-arrive .9s cubic-bezier(.22,1,.36,1) both}.projects-intro-note{animation:projects-arrive .9s .15s cubic-bezier(.22,1,.36,1) both}}
+@keyframes projects-arrive{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1000px){.projects-premium .projects-introduction{gap:5%;padding-top:55px;min-height:420px}.projects-premium .projects-introduction h1{font-size:clamp(44px,6vw,60px)}.projects-intro-lead{font-size:15px}.projects-collection-number{font-size:38px}}
+@media(max-width:650px){
+ .projects-premium .projects-header nav{display:flex;gap:17px}
+ .projects-premium .projects-header nav>a{font-size:12px}
+ .projects-premium .projects-header nav>a[href='/#capabilities']{display:none}
+ .projects-premium .projects-header nav>a.nav-project-link{padding:0 13px;gap:16px;font-size:11px;min-height:42px}
+ .projects-exhibition::before{height:1050px;background:linear-gradient(90deg,#09070ae6,#09070a73),url('/asl-intelligence-chamber-v1.webp') 68% top/auto 850px no-repeat;mask-image:linear-gradient(#000,#0009 48%,transparent 90%)}
+ .projects-exhibition::after{display:none}
+ .projects-premium .projects-introduction{grid-template-columns:1fr;gap:35px;padding-top:50px;padding-bottom:45px;min-height:0}
+ .projects-eyebrow{font-size:10px;margin-bottom:22px}
+ .projects-premium .projects-introduction h1{font-size:clamp(36px,9.8vw,60px)}
+ .projects-intro-lead{font-size:15px;margin-top:24px}
+ .projects-intro-note{max-width:100%;padding:0}
+ .projects-collection-number{font-size:32px;gap:16px}
+ .projects-collection-number small{max-width:none;font-size:10px}
+ .projects-intro-note>p{font-size:13px;margin:18px 0 12px;max-width:340px}
+ .projects-premium .projects-index{padding-top:40px;padding-bottom:50px}
+ .projects-collection-heading{display:block}
+ .projects-collection-heading>p{margin-top:17px;font-size:12px}
+ .projects-premium .projects-filters{gap:8px;margin-top:25px;padding-bottom:15px}
+ .projects-premium .projects-filters button{font-size:11px;padding:0 14px}
+ .projects-premium .projects-grid{gap:40px}
+ .projects-premium .projects-count{margin-bottom:38px}
+ .projects-premium .portfolio-project-copy>p:not(:first-child){font-size:13px}
+ .projects-invitation{padding-top:48px;padding-bottom:50px}
+ .projects-invitation::before{background:linear-gradient(90deg,#0d090dec,#0d090d94),url('/asl-connected-hands-v1.webp') 60% center/cover no-repeat}
+ .projects-invitation>div>p:not(.projects-eyebrow){font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){.projects-premium *{animation:none!important;transition:none!important}}

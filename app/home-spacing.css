@@ -1,0 +1,17 @@
+/* Shared chapter spacing, independent of each section's internal layout and motion. */
+.asl-home .studio-refined{padding-bottom:64px}
+.asl-home .services-lab.cinematic-services,
+.asl-home .work-section,
+.asl-home .intelligence-lab,
+.asl-home .why-asl.why-story{padding-top:80px;padding-bottom:64px}
+.asl-home .process-experience{padding-top:72px}
+.asl-home .contact-section{padding-top:80px;padding-bottom:80px}
+@media(max-width:650px){
+ .asl-home .studio-refined{padding-bottom:52px}
+ .asl-home .services-lab.cinematic-services,
+ .asl-home .work-section,
+ .asl-home .intelligence-lab,
+ .asl-home .why-asl.why-story{padding-top:56px;padding-bottom:52px}
+ .asl-home .process-experience{padding-top:52px}
+ .asl-home .contact-section{padding-top:56px;padding-bottom:56px}
+}

@@ -1,0 +1,28 @@
+.asl-home .home-footer.premium-footer{padding-top:65px;padding-bottom:25px;background:radial-gradient(ellipse at 80% 20%,#4a102326,transparent 60%),#09070a;border-top:1px solid #b682982b;overflow:clip}
+.footer-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.65fr) minmax(0,1.15fr);gap:clamp(30px,5vw,80px)}
+.footer-brand>.wordmark{display:inline-flex;font-size:35px}
+.footer-brand>.footer-logo{align-items:center;min-width:76px;min-height:72px;line-height:1}
+.footer-logo img{display:block;width:76px;height:auto}
+.footer-brand>p{font-size:14px;line-height:1.85;color:#b7a4ae;margin:23px 0 24px;max-width:320px}
+.footer-studio-label{font:10px var(--font-tech),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#b78096}
+.asl-home .premium-footer h2{font:11px var(--font-tech),sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#b78096;margin:0 0 24px;line-height:1.4}
+.footer-explore{display:flex;flex-direction:column;align-items:stretch;align-self:start;gap:0}
+.footer-explore a{display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:42px;font-size:14px;color:#ded1d7;max-width:185px}
+.footer-explore a span{font-size:12px;color:#b78096;transition:translate .2s}
+.footer-email{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;padding:0 0 18px;border:0;border-bottom:1px solid #af778c38;background:transparent;font:500 clamp(19px,1.85vw,27px) var(--font-display),sans-serif;letter-spacing:-.04em;color:#eadce2;text-align:left}
+.footer-email>span{font-size:20px;color:#c58da5}
+.footer-socials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.footer-socials button{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:46px;border:1px solid #9b607b45;border-radius:7px;padding:0 17px;background:linear-gradient(130deg,#4213266b,#24101b55);color:#e0cbd5;font:12px var(--font-tech),sans-serif;transition:background .2s,border-color .2s}
+.footer-socials button span{color:#bd809c;font-size:14px}
+.footer-channel-status{font-size:11px;line-height:1.7;color:#a38c97;margin:16px 0 0;min-height:38px}
+.footer-brand-signature{display:flex;align-items:baseline;gap:14px;margin:45px 0 28px;pointer-events:none;line-height:.82}
+.footer-brand-signature>span{font:700 clamp(115px,16vw,225px)/.82 var(--font-display),sans-serif;letter-spacing:-.07em;color:#dec8d2}
+.footer-brand-signature>i{width:clamp(16px,2.4vw,32px);height:clamp(16px,2.4vw,32px);background:#9f486b;transform:skewX(-12deg)}
+.asl-home .premium-footer .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #b682982b;padding-top:22px;font-size:11px;color:#a88f9b}
+.premium-footer .footer-bottom>a{display:flex;gap:22px;align-items:center;color:#d9bdcb;min-height:36px}
+.premium-footer a:focus-visible,.premium-footer button:focus-visible{outline:2px solid #d7a0bc;outline-offset:5px}
+@media(hover:hover){.footer-socials button:hover{background:#5919328c;border-color:#c78fa575}.footer-explore a:hover span{translate:3px -3px}.footer-email:hover{color:#f7eaf0}}
+@media(max-width:1000px){.footer-layout{grid-template-columns:1fr 1fr;gap:40px}.footer-brand{grid-column:1/-1}.footer-brand>p{margin-top:15px}.footer-brand-signature{margin-top:35px}}
+@media(max-width:650px){.asl-home .home-footer.premium-footer{padding-top:45px;padding-bottom:22px}.footer-layout{grid-template-columns:1fr;gap:32px}.footer-brand{grid-column:auto}.footer-brand>p{font-size:13px;margin-bottom:18px}.footer-explore{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}.footer-explore h2{grid-column:1/-1;margin-bottom:10px!important}.footer-explore a{font-size:13px;max-width:none}.footer-email{font-size:22px}.footer-socials button{min-height:46px;padding:0 14px}.footer-brand-signature{margin-top:30px;margin-bottom:25px}.asl-home .premium-footer .footer-bottom{flex-wrap:wrap;gap:8px 20px;font-size:10px}.premium-footer .footer-bottom>span:nth-child(2){flex-basis:100%;order:3}.premium-footer .footer-bottom>a{margin-left:auto}}
+@media(prefers-reduced-motion:reduce){.premium-footer a,.premium-footer button,.footer-explore a span{transition:none}}
+@media(max-width:650px){.footer-brand>.footer-logo{min-width:64px;min-height:61px}.footer-logo img{width:64px}}

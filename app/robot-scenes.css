@@ -1,0 +1,32 @@
+/* Character-led imagery, composed inside sections rather than wallpaper. */
+.asl-home .hero-atmosphere::before{background:radial-gradient(ellipse at 75% 48%,#62132c55,transparent 50%),linear-gradient(110deg,#080709 25%,#160b11 70%,#09070a)}
+.asl-home .hero-atmosphere::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.9%,#c6839620 50%,transparent 50.1%),linear-gradient(0deg,transparent 49.9%,#c6839610 50%,transparent 50.1%);background-size:160px 160px;mask-image:linear-gradient(90deg,transparent 40%,#000);opacity:.4;pointer-events:none}
+.asl-home .studio-section::before{background:radial-gradient(ellipse at 78% 52%,#67122d3d,transparent 45%);opacity:1;animation:none!important;transform:none}
+.asl-home .studio-manifesto{max-width:100%;position:relative;z-index:2}
+.studio-robot-scene{position:absolute;right:3%;top:245px;width:46%;max-width:520px;margin:0;pointer-events:none}
+.studio-robot-scene img{display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 28px 35px #0006)}
+.studio-robot-scene figcaption{font-family:var(--font-tech);font-size:11px;letter-spacing:.03em;color:#c69aaa;text-align:center;margin-top:-12px}
+.asl-home .studio-introduction{max-width:52%;grid-template-columns:50px minmax(0,1fr);gap:25px;min-height:390px;align-items:center}
+.asl-home .studio-principles{margin-top:25px}
+.workflow-robot-engine img{width:112%;height:112%;max-width:none;mix-blend-mode:normal;mask-image:none;object-fit:contain;filter:drop-shadow(0 20px 25px #0005)}
+.workflow-robot-engine>span{bottom:-16px}.workflow-robot-engine svg{opacity:.6}
+.sections-motion .studio-section.seen .studio-robot-scene{animation:robot-scene-enter 1.1s .15s cubic-bezier(.22,1,.36,1) both}
+.sections-motion .studio-section.in-view .studio-robot-scene img{animation:robot-scene-float 7s ease-in-out infinite}
+.sections-motion .intelligence-lab.in-view .workflow-robot-engine img{animation:robot-scene-float 8s ease-in-out infinite}
+.intelligence-console[data-step='1'] .workflow-robot-engine img,.intelligence-console[data-step='2'] .workflow-robot-engine img{filter:drop-shadow(0 0 28px #a7335640)}
+@keyframes robot-scene-enter{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes robot-scene-float{50%{transform:translateY(-10px)}}
+@media(min-width:651px) and (max-width:1100px){.studio-robot-scene{top:235px;width:48%;right:1%}.asl-home .studio-introduction{max-width:49%;min-height:350px;grid-template-columns:1fr;gap:0}.studio-margin-note{display:none}.studio-robot-scene figcaption{font-size:10px}}
+@media(max-width:750px){.workflow-robot-engine{margin:20px 0}}
+@media(max-width:650px){.asl-home .hero-atmosphere::before{background:radial-gradient(ellipse at 65% 69%,#651a354d,transparent 48%),linear-gradient(180deg,#080709,#160c12 65%,#080709)}.asl-home .studio-introduction{max-width:100%;min-height:0;margin-top:35px;padding-bottom:35px}.studio-robot-scene{position:relative;inset:auto;width:100%;max-width:420px;margin:25px auto 0}.studio-robot-scene figcaption{font-size:10px;margin-top:-5px}.asl-home .studio-principles{margin-top:0}.workflow-robot-engine{width:270px;max-width:100%}.workflow-robot-engine img{width:105%;height:105%}}
+@media(prefers-reduced-motion:reduce){.asl-home .studio-robot-scene,.asl-home .studio-robot-scene img,.asl-home .workflow-robot-engine img{animation:none!important}}
+
+@media(max-width:650px){.asl-home .studio-introduction{grid-template-columns:1fr;gap:0;align-items:start}}
+/* Independent 3D character layer in the workflow illustration. */
+.workflow-character{position:absolute;width:112%;height:112%;left:-6%;top:-6%;filter:drop-shadow(0 20px 25px #0005)}
+.workflow-character-canvas{position:absolute;inset:0;opacity:0;transition:opacity .25s}
+.workflow-character-canvas canvas{display:block;width:100%;height:100%}
+.asl-home .workflow-character .workflow-character-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;animation:none!important;filter:none;transition:opacity .25s}
+.workflow-character[data-ready=true] .workflow-character-canvas{opacity:1}.workflow-character[data-ready=true] .workflow-character-fallback{opacity:0}
+@media(max-width:650px){.workflow-character{width:105%;height:105%;left:-2.5%;top:-2.5%}}
+@media(prefers-reduced-motion:reduce){.workflow-character-canvas,.workflow-character-fallback{transition:none}}
