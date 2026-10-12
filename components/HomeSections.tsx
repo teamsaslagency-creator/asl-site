@@ -2,7 +2,7 @@
 
 import ArrowIcon from './ArrowIcon';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import ProcessExperience from './ProcessExperience';
 import WhyASL from './WhyASL';
 import Services from './Services';
@@ -12,7 +12,7 @@ import ProjectBriefForm from './ProjectBriefForm';
 import { projects as allProjects, contactEmail } from '@/lib/projects';
 const projects = allProjects.slice(0, 3);
 const developmentTools = ['TypeScript', 'React', 'Next.js', 'Three.js', 'Blender', 'GSAP', 'Motion', 'Flutter', 'AI agents'];
-export default function HomeSections({ motion }: { motion: boolean }) {
+export default function HomeSections({ motion, serviceDirectory }: { motion: boolean; serviceDirectory: ReactNode }) {
   const [selected, setSelected] = useState(0);
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -34,13 +34,14 @@ export default function HomeSections({ motion }: { motion: boolean }) {
     </section>
 
     <Services motion={motion} />
+    {serviceDirectory}
 
     <section className="work-section home-shell" id="work" aria-labelledby="work-title" data-motion-section>
-      <div className="home-section-heading"><div><p className="section-kicker">03 / Proof in the experience</p><h2 id="work-title">See the idea.<br />Feel the difference.</h2></div><div><p>Explore the experience.<br />Not just the screenshot.</p><a className="text-link" href="/projects">All projects <span><ArrowIcon /></span></a></div></div>
+      <div className="home-section-heading"><div><p className="section-kicker">03 / Studio showcases</p><h2 id="work-title">See the idea.<br />Feel the difference.</h2></div><div><p>Explore our website showcases.<br />Design and interaction, brought to life.</p><a className="text-link" href="/projects">All projects <span><ArrowIcon /></span></a></div></div>
       <div className="project-gallery" aria-label="Selected project gallery">
         <div className="gallery-track">{projects.map((project, index) => {
           const position = (index - selected + 3) % 3;
-          return <button key={project.name} className={`project-frame project-position-${position}`} onClick={() => setSelected(index)} aria-label={`Select ${project.name} project`} aria-pressed={selected === index}><img src={project.image} alt={`${project.name} website preview`} loading="lazy" width={1280} height={720} /><span className="project-frame-label">{project.name}<span>{project.category}</span></span></button>;
+          return <button key={project.name} className={`project-frame project-position-${position}`} onClick={() => setSelected(index)} aria-labelledby={`gallery-label-${project.id}`} aria-pressed={selected === index}><img src={project.image} alt={`${project.name} website preview`} loading="lazy" width={1280} height={720} /><span id={`gallery-label-${project.id}`} className="project-frame-label">{project.name}<span>{project.category}</span></span></button>;
         })}</div>
         <div className="gallery-navigation"><button aria-label="Previous project" onClick={() => setSelected(value => (value + 2) % 3)}>←</button><span>Explore the projects</span><button aria-label="Next project" onClick={() => setSelected(value => (value + 1) % 3)}>→</button></div>
       </div>

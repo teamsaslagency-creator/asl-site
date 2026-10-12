@@ -1,0 +1,20 @@
+[
+  {
+    "url": "http://aslagency.dev/",
+    "status": 308,
+    "location": "https://aslagency.dev/",
+    "robots": null
+  },
+  {
+    "url": "https://aslagency.dev/services/ai-automation?source=release-check",
+    "status": 308,
+    "location": "https://www.aslagency.dev/services/ai-automation?source=release-check",
+    "robots": null
+  },
+  {
+    "url": "https://www.aslagency.dev/",
+    "status": 200,
+    "location": null,
+    "robots": null
+  }
+]

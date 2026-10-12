@@ -1,0 +1,20 @@
+{
+  "blockedJs": {
+    "overlay": false,
+    "heroOpacity": "1",
+    "mainInert": false
+  },
+  "freshContact": {
+    "overlay": false,
+    "inert": false,
+    "film": 0
+  },
+  "gallery": {
+    "galleryBefore": "gallery-label-ember",
+    "galleryAfter": "gallery-label-nova"
+  },
+  "workflowRobot": {
+    "ready": true,
+    "canvas": true
+  }
+}

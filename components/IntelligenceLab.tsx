@@ -3,7 +3,7 @@
 import ArrowIcon from './ArrowIcon';
 
 import { useEffect, useRef, useState } from 'react';
-import WorkflowRobot from './WorkflowRobot';
+import WorkflowRobot from './DeferredWorkflowRobot';
 const examples = [
   { name: 'Customer enquiries', input: 'We need a new website for our café, with a menu and table reservations.', route: 'Website enquiry → project brief', output: 'Website enquiry identified. Capture the menu, booking requirements, and brand direction in a brief for the team.', tools: ['Website form', 'Project workspace', 'Team review'] },
   { name: 'Product assistance', input: 'I’m looking for a lightweight jacket for a weekend trip. What should I consider?', route: 'Product question → useful guidance', output: 'Ask about weather, fit, and budget, then use the product catalogue to suggest suitable options for the customer.', tools: ['Storefront', 'Product catalogue', 'Customer reply'] },

@@ -25,23 +25,32 @@ export default function LoadingEntrance({ onComplete }: Props) {
     let disposed = false;
     let exitTimer: ReturnType<typeof setTimeout> | undefined;
 
-    const finish = () => {
+    const finish = (immediate = false) => {
       if (dismissed.current) return;
       dismissed.current = true;
       media.pause();
       setLeaving(true);
-      exitTimer = setTimeout(() => complete.current(), preference.matches ? 0 : 850);
+      try { sessionStorage.setItem('asl:intro-seen', 'true'); } catch { /* Storage may be unavailable. */ }
+      exitTimer = setTimeout(() => complete.current(), immediate || preference.matches ? 0 : 850);
     };
-    const change = () => { if (preference.matches) finish(); };
-    finishEntrance.current = finish;
+    const finishNormally = () => finish();
+    const change = () => { if (preference.matches) finish(true); };
+    finishEntrance.current = finishNormally;
     const skip = (event: KeyboardEvent) => { if (event.key === 'Escape') finish(); };
-    media.addEventListener('ended', finish);
-    media.addEventListener('error', finish);
+    media.addEventListener('ended', finishNormally);
+    media.addEventListener('error', finishNormally);
     preference.addEventListener('change', change);
     window.addEventListener('keydown', skip);
     // A failed download or denied autoplay must never trap the visitor.
-    const safetyTimer = setTimeout(finish, 12000);
-    if (preference.matches) finish();
+    const safetyTimer = setTimeout(finishNormally, 12000);
+    let alreadySeen = false;
+    try { alreadySeen = sessionStorage.getItem('asl:intro-seen') === 'true'; } catch { /* Play normally without storage. */ }
+    const connection = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    const slowConnection = ['slow-2g', '2g', '3g'].includes(connection?.effectiveType ?? '');
+    // Keep the approved fast first-visit film. Late hydration must not interrupt
+    // an already usable page; slow connections must not download the entrance.
+    if (preference.matches || alreadySeen || location.hash || connection?.saveData
+      || performance.now() > 3000 || slowConnection) finish(true);
     else {
       media.src = '/asl-loading-burgundy-refined.mp4';
       void media.play().catch(() => { if (!disposed) finish(); });
@@ -52,8 +61,8 @@ export default function LoadingEntrance({ onComplete }: Props) {
       clearTimeout(safetyTimer);
       clearTimeout(exitTimer);
       media.pause();
-      media.removeEventListener('ended', finish);
-      media.removeEventListener('error', finish);
+      media.removeEventListener('ended', finishNormally);
+      media.removeEventListener('error', finishNormally);
       preference.removeEventListener('change', change);
       window.removeEventListener('keydown', skip);
       document.body.style.overflow = previousOverflow;

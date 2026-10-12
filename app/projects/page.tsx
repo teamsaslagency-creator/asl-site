@@ -1,19 +1,21 @@
-import type { Metadata } from 'next';
+import { breadcrumbs, pageMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 import ProjectsGrid from '@/components/ProjectsGrid';
 import HomeFooter from '@/components/HomeFooter';
 import { projects } from '@/lib/projects';
 import ArrowIcon from '@/components/ArrowIcon';
 
-export const metadata: Metadata = { title: 'Projects — ASL', description: 'Explore ASL’s websites, interactive experiences, and live project previews.' };
+export const metadata = pageMetadata('Website & Interaction Showcases', 'Explore ASL’s studio website showcases for cafés, salons, food brands and automotive showrooms, with live design and interaction previews.', '/projects');
 
 export default function Projects() {
   return <main className="projects-page projects-premium asl-home" id="projects-top">
+    <JsonLd data={breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Projects', path: '/projects' }])} />
     <a className="skip-link" href="#projects-main">Skip to projects</a>
     <div className="projects-exhibition">
     <div className="projects-opening">
       <header className="site-header projects-header premium-header">
         <a className="wordmark nav-logo" href="/" aria-label="ASL home"><img src="/asl-logo.svg" width="58" height="55" alt="" /></a>
-        <nav aria-label="Main navigation"><a href="/">Home</a><a href="/#capabilities">Services</a><a className="nav-project-link" href="/#contact">Start a project <span aria-hidden="true"><ArrowIcon /></span></a></nav>
+        <nav aria-label="Main navigation"><a href="/">Home</a><a href="/services">Services</a><a className="nav-project-link" href="/#contact">Start a project <span aria-hidden="true"><ArrowIcon /></span></a></nav>
       </header>
       <section className="projects-introduction home-shell" aria-labelledby="projects-title">
         <div className="projects-intro-copy">
@@ -23,7 +25,7 @@ export default function Projects() {
         </div>
         <div className="projects-intro-note">
           <span className="projects-collection-number">{String(projects.length).padStart(2, '0')}<small>Live website experiences</small></span>
-          <p>From the first impression to the smallest interaction, explore how we give each business a world of its own.</p>
+          <p>Studio showcases and concept experiences. Explore the visual direction, interfaces and interactions behind each world.</p>
           <a className="projects-collection-link" href="#projects-main">Explore the collection <span aria-hidden="true">↓</span></a>
         </div>
       </section>
@@ -36,6 +38,6 @@ export default function Projects() {
     <section className="projects-invitation home-shell" aria-labelledby="projects-invitation-title">
       <div><p className="projects-eyebrow">Your next chapter</p><h2 id="projects-invitation-title">Your world.<br /><span>Made possible.</span></h2><p>Websites, mobile apps, and intelligent systems.<br />Let’s shape what comes next.</p><a className="projects-invitation-link" href="/#contact">Start a project <span aria-hidden="true"><ArrowIcon /></span></a></div>
     </section>
-    <HomeFooter homePath="/" />
+    <HomeFooter homePath="/" topId="projects-top" />
   </main>;
 }

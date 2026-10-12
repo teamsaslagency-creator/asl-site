@@ -1,0 +1,61 @@
+/* Extend the approved black lacquer / oxblood / silver system. */
+.asl-home .service-directory { padding-top:48px;padding-bottom:64px; }
+.service-directory-heading { display:flex;justify-content:space-between;align-items:baseline;gap:36px;margin-bottom:32px; }
+.asl-home .service-directory h2 { font-size:clamp(26px,3vw,40px); }
+.service-directory-heading>p { max-width:340px;color:#b3a9a9;font-size:14px;line-height:1.8; }
+.service-directory ul { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 40px;list-style:none;margin:0;padding:0; }
+.service-directory li { border-top:1px solid #b497973d;padding-top:18px;min-width:0; }
+.service-directory li>a { display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;font-family:var(--font-display),sans-serif;font-size:19px;font-weight:700; }
+.service-directory li>p { color:#c0a9b1;font-size:13px;line-height:1.7;margin:8px 0 0; }
+.service-page .service-hero { padding-top:72px;padding-bottom:88px;background:radial-gradient(ellipse at 90% 40%,#650b2838,transparent 60%); }
+.asl-home.service-page .service-hero h1 { max-width:1050px;font-size:clamp(40px,6.5vw,92px);line-height:1.08;letter-spacing:-.055em;text-wrap:balance;margin:0 0 32px; }
+.service-hero .section-kicker { color:#d4a3b2;margin:0 0 24px;font-size:12px; }
+.service-hero-statement { font:600 clamp(23px,3vw,35px)/1.25 var(--font-display),sans-serif;max-width:780px;color:#e0c4d0;margin:0 0 22px; }
+.service-page .service-lead { max-width:720px;font-size:17px;line-height:1.9;color:#c9bac0;margin:0 0 32px; }
+.service-breadcrumbs { display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:#c0a9b1;margin-bottom:48px; }
+.service-breadcrumbs a { min-height:36px;display:inline-flex;align-items:center; }
+.service-breadcrumbs span { align-self:center; }
+.service-body { padding-bottom:48px; }
+.service-section { display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:60px;border-top:1px solid #b4979730;padding:64px 0; }
+.asl-home .service-section h2 { font-size:clamp(29px,3.1vw,43px);line-height:1.15;max-width:430px;text-wrap:balance; }
+.service-section p { font-size:16px;line-height:1.9;color:#c9bac0;margin:0;max-width:720px; }
+.service-section p+p { margin-top:20px; }
+.service-section .text-link { display:inline-flex;align-items:center;gap:24px;min-height:48px;margin-top:18px; }
+.service-capabilities { display:grid;gap:34px; }
+.asl-home .service-capabilities h3,.asl-home .service-showcases h3 { font-size:22px;line-height:1.4;margin:0 0 12px; }
+.service-use-cases { list-style:none;padding:0;margin:0; }
+.service-use-cases li { font-size:17px;line-height:1.7;padding:16px 0;border-bottom:1px solid #b4979725;color:#e0c4d0; }
+.service-showcases { display:grid;gap:36px; }
+.service-showcases img { display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;margin-bottom:20px;border:1px solid #b497973d; }
+.service-showcases h3 { display:flex;align-items:center;justify-content:space-between;gap:20px; }
+.service-section .service-aside { color:#c0a9b1;font-size:13px;line-height:1.8;display:block;margin-top:18px; }
+.service-process { padding:0;margin:0;list-style:none; }
+.service-process li { display:flex;gap:24px;padding:18px 0;border-bottom:1px solid #b4979725; }
+.service-process li>span { color:#da8e9f;font:14px var(--font-tech),sans-serif;line-height:2; }
+.service-enquiry .primary-link { display:inline-flex;align-items:center;margin-top:28px; }
+.related-services { margin:0;padding:0;list-style:none; }
+.related-services .text-link { margin-top:0; }
+.not-found-links { display:flex;flex-wrap:wrap;align-items:center;gap:24px; }
+.inner-header nav { display:flex!important; }
+.asl-home .footer-services { display:flex;flex-wrap:wrap;gap:12px 28px;padding:28px 0;border-top:1px solid #b4979725;color:#c9bac0;font-size:12px; }
+.footer-services>a { display:inline-flex;align-items:center;min-height:44px; }
+@media(max-width:900px) {
+  .service-section { gap:32px;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); }
+  .service-directory ul { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:767px) {
+  .asl-home .inner-header.premium-header nav { gap:14px; }
+  .asl-home .inner-header.premium-header nav>a { display:inline-flex;font-size:12px; }
+  .asl-home .inner-header.premium-header nav>a.nav-project-link { padding:0 12px;font-size:11px;gap:10px; }
+  .asl-home .inner-header.premium-header nav>a[href='/projects'] { display:none; }
+  .service-page .service-hero { padding-top:42px;padding-bottom:56px; }
+  .service-breadcrumbs { margin-bottom:32px; }
+  .service-page .service-lead { font-size:16px;line-height:1.85; }
+  .service-section { grid-template-columns:minmax(0,1fr);gap:26px;padding:40px 0; }
+  .service-directory-heading { display:block; }
+  .service-directory-heading>p { margin-top:18px;max-width:480px; }
+  .service-directory ul { gap:20px; }
+  .service-directory li>a { font-size:17px; }
+  .asl-home .service-directory { padding-top:32px;padding-bottom:48px; }
+}
+@media(max-width:430px) { .service-directory ul { grid-template-columns:minmax(0,1fr);gap:16px; } }

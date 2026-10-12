@@ -8,6 +8,8 @@
     "build": "next build",
     "start": "next start --hostname 127.0.0.1",
     "typecheck": "tsc --noEmit",
+    "test": "node --test scripts/check-seo-config.mjs scripts/check-project-brief.mjs scripts/check-home-entrance.mjs scripts/check-loading-entrance.mjs",
+    "test:seo": "node scripts/check-seo.mjs",
     "export:head": "node scripts/export-head.mjs"
   },
   "dependencies": {
