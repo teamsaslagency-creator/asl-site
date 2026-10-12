@@ -52,11 +52,35 @@ for (const path of paths) await check(path, async () => {
   assert.equal(new URL(meta('og:url')).href, new URL(`${canonical}${path}`).href);
   assert.ok(meta('og:image')?.startsWith(canonical), 'canonical social image');
   assert.equal(meta('twitter:card'), 'summary_large_image');
+  assert.equal(meta('og:site_name'), 'ASL', 'primary social site name');
+  assert.equal(meta('application-name'), 'ASL', 'primary application name');
+  assert.ok(!meta('keywords'), 'no meta keywords');
   assert.match(meta('robots') || '', preview ? /noindex/ : /(?:^|,\s*)index(?:,|$)/);
   const schemas = [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)].map(s => JSON.parse(s[1]));
   const entities = schemas.flatMap(s => s['@graph'] || [s]);
-  assert.ok(entities.some(s => s['@type'] === 'Organization'), 'organization schema');
-  assert.ok(entities.some(s => s['@type'] === 'WebSite'), 'website schema');
+  for (const type of ['Organization', 'WebSite']) {
+    const matches = entities.filter(s => s['@type'] === type);
+    assert.equal(matches.length, 1, `one ${type} entity`);
+    assert.equal(matches[0].name, 'ASL', 'primary entity name');
+    assert.equal(matches[0].alternateName, 'ASL Agency', 'approved secondary alias');
+    assert.equal(matches[0].url, `${canonical}/`);
+  }
+  const organization = entities.find(s => s['@type'] === 'Organization');
+  const website = entities.find(s => s['@type'] === 'WebSite');
+  assert.equal(organization['@id'], `${canonical}/#organization`);
+  assert.equal(website['@id'], `${canonical}/#website`);
+  assert.equal(website.publisher['@id'], organization['@id']);
+  assert.equal(organization.email, 'contact@aslagency.dev');
+  assert.equal(organization.logo, `${canonical}/asl-logo.svg`);
+  assert.equal(new Set(entities.filter(s => s['@id']).map(s => s['@id'])).size, entities.filter(s => s['@id']).length, 'unique schema entity IDs');
+  if (path === '/') {
+    const studio = html.match(/<div class="studio-introduction">(.*?)<\/div><\/div>/s)?.[1];
+    assert.ok(studio, 'visible studio introduction in initial HTML');
+    const text = decode(studio.replace(/<[^>]*>/g, ' '));
+    assert.equal((text.match(/ASL Agency/g) || []).length, 1, 'one natural visible alias');
+    assert.match(text, /creative technology and software development agency in Sri Lanka/);
+    assert.match(html, /<h1[^>]*id="hero-title"[^>]*><span>Digital\.<\/span><span>Alive\.<\/span><\/h1>/, 'original hero headline');
+  }
   if (path !== '/') assert.ok(entities.some(s => s['@type'] === 'BreadcrumbList'), 'breadcrumbs');
   if (path.startsWith('/services/')) {
     const service = entities.find(s => s['@type'] === 'Service');

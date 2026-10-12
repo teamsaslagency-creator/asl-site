@@ -14,9 +14,10 @@ function productionOrigin(value: string): string {
 export const seo = {
   url: productionOrigin(process.env.ASL_SITE_URL || verifiedOrigin),
   name: 'ASL',
+  alternateName: 'ASL Agency',
   locale: 'en_LK',
   language: 'en',
-  description: 'ASL is a creative technology agency in Sri Lanka building distinctive websites, e-commerce, mobile apps, custom software and AI automation for businesses.',
+  description: 'ASL is a creative technology and software development agency in Sri Lanka, building websites, e-commerce, mobile apps and AI automation for businesses.',
   email: contactEmail,
   logo: '/asl-logo.svg',
   socialImage: '/opengraph-image',
@@ -46,8 +47,8 @@ export function pageMetadata(title: string, description: string, path: string): 
 export const businessGraph = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'Organization', '@id': organizationId, name: seo.name, url: absoluteUrl('/'), logo: absoluteUrl(seo.logo), email: seo.email, description: seo.description },
-    { '@type': 'WebSite', '@id': websiteId, name: seo.name, url: absoluteUrl('/'), inLanguage: seo.language, publisher: { '@id': organizationId } },
+    { '@type': 'Organization', '@id': organizationId, name: seo.name, alternateName: seo.alternateName, url: absoluteUrl('/'), logo: absoluteUrl(seo.logo), email: seo.email, description: seo.description },
+    { '@type': 'WebSite', '@id': websiteId, name: seo.name, alternateName: seo.alternateName, url: absoluteUrl('/'), inLanguage: seo.language, publisher: { '@id': organizationId } },
   ],
 };
 
