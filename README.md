@@ -6,7 +6,7 @@ Next.js, React, TypeScript, and Three.js. Run `npm install`, then `npm run dev` 
 
 Import this GitHub repository into Vercel and select the Next.js framework preset. Keep the root directory at the repository root and use the default build and output settings. No environment variables are required for the current site.
 
-The contact form prepares a brief locally; email and social buttons are placeholders until the real contact channels are configured. The `concepts` directory contains local design previews and is excluded from Git. All website assets are in `public`.
+The contact form sends project briefs through Formspree; email links use contact@aslagency.dev and social buttons remain placeholders until the real social channels are configured. The `concepts` directory contains local design previews and is excluded from Git. All website assets are in `public`.
 
 Internal page links use a short burgundy shutter transition. Links within the current page, external links, and new-tab gestures retain native behavior. Returning to Home uses this transition instead of repeating the full particle intro; the robot entrance starts once the shutters clear. Reduced-motion preferences skip the shutters, and a timeout prevents navigation failures from trapping visitors behind the overlay.
 
@@ -28,11 +28,11 @@ Background removal used the built-in image generation tool. Full prompt and asse
 
 ## Complete homepage and portfolio
 
-The homepage now includes the preserved robot hero, interactive services, a cover-flow gallery of three supplied projects, a studio statement, an interactive process, an orbital technology scene, a local project-brief form, and a large ASL footer.
+The homepage now includes the preserved robot hero, interactive services, a cover-flow gallery of three supplied projects, a studio statement, an interactive process, an orbital technology scene, a project-brief form, and a large ASL footer.
 
-The /projects page lists all five supplied websites, with category filters, in-page live previews, and external website links. Project metadata and the temporary contact email are centralized in lib/projects.ts. Preview images are screenshots captured from the live websites.
+The /projects page lists all five supplied websites, with category filters, in-page live previews, and external website links. Project metadata and the contact email and Formspree endpoint are centralized in lib/projects.ts. Preview images are screenshots captured from the live websites.
 
-The contact address is hello@asl.example, a reserved placeholder requested while the real mailbox is created. The form validates and prepares a local brief for copying/downloading; it does not send messages. Configure a real email and delivery service before using it for incoming enquiries.
+The contact address is contact@aslagency.dev, shared by the contact section and footer. The form submits name, email, service, and project idea to https://formspree.io/f/mljglvqy without leaving the page. It keeps the approved “Prepare my project brief” button, disables fields during sending, confirms accepted submissions, and retains details on failure. Formspree handles storage and email notifications; verify that its Target Email is contact@aslagency.dev. A hidden _gotcha field provides basic honeypot filtering. No API key or additional package is required.
 
 New scene loops pause off-screen and follow the hero motion toggle. Reduced-motion preferences are respected. Motion direction was informed by the publicly visible Animos showcase stream, depth stack, and cover-flow templates; the site animations are implemented directly in CSS/SVG and React.
 

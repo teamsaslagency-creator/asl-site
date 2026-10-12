@@ -2,11 +2,12 @@
 
 import { useState } from 'react';
 import ArrowIcon from './ArrowIcon';
+import { contactEmail } from '@/lib/projects';
 
 const socialChannels = ['Instagram', 'LinkedIn', 'Facebook', 'WhatsApp'];
 
 export default function HomeFooter({ homePath = '' }: { homePath?: string }) {
-  const [channelStatus, setChannelStatus] = useState('Our contact channels are coming soon.');
+  const [channelStatus, setChannelStatus] = useState('Our social channels are coming soon.');
 
   return <footer className="home-footer premium-footer home-shell">
     <div className="footer-layout">
@@ -24,7 +25,7 @@ export default function HomeFooter({ homePath = '' }: { homePath?: string }) {
       </nav>
       <div className="footer-connect">
         <h2>Stay connected</h2>
-        <button className="footer-email" type="button" onClick={() => setChannelStatus('This is an example email. Our real address is coming soon.')} aria-label="Example email address, coming soon">example@gmail.com <span aria-hidden="true"><ArrowIcon /></span></button>
+        <a className="footer-email" href={`mailto:${contactEmail}`}>{contactEmail} <span aria-hidden="true"><ArrowIcon /></span></a>
         <div className="footer-socials" aria-label="Social media and WhatsApp">
           {socialChannels.map(channel => <button type="button" key={channel} onClick={() => setChannelStatus(`${channel} link coming soon.`)}>{channel}<span aria-hidden="true"><ArrowIcon /></span></button>)}
         </div>

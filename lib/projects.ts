@@ -6,5 +6,7 @@ export const projects = [
   { id: 'burger', name: 'Burger Join', category: 'Food / Storefront', text: 'Bold food imagery, layered scroll storytelling, and an interactive concept menu.', tags: 'Scroll storytelling · Menu filters · Shopping bag', url: 'https://burger-join.vercel.app/', image: '/projects/burger.jpg' },
 ];
 
-// Replace this reserved example address when ASL’s real mailbox is ready.
-export const contactEmail = 'hello@asl.example';
+// Shared contact address for the site.
+export const contactEmail = 'contact@aslagency.dev';
+
+export const projectBriefEndpoint = 'https://formspree.io/f/mljglvqy';
