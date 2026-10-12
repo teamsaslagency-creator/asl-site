@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
 import ArrowIcon from './ArrowIcon';
 
+const serviceDestinations = ['/services/website-development', '/services/mobile-app-development', '/services/ai-automation', '/services/seo-performance'];
+
 const services = [
   { name: 'Web experiences', detail: 'Make every interaction unforgettable.', copy: 'Premium websites and e-commerce shaped around your brand. Immersive visuals, thoughtful interactions, and shopping that feels effortless.', tags: ['Custom websites', 'E-commerce', 'Interactive 3D'], label: 'Websites with presence.', tools: 'TypeScript / React / Next.js', cta: 'Shape your website' },
   { name: 'Apps & software', detail: 'Your idea. In people’s hands.', copy: 'Beautiful Flutter apps and custom platforms that make complex tasks feel simple. Connected to the tools your business already uses.', tags: ['Flutter apps', 'Custom platforms', 'Integrations'], label: 'Your product. In their hands.', tools: 'Flutter / Custom platforms / APIs', cta: 'Plan your product' },
@@ -110,8 +112,8 @@ export default function Services({ motion }: { motion: boolean }) {
         const velocity = Math.abs(dx) / Math.max(1, performance.now() - start.time);
         if (Math.abs(dx) > Math.abs(dy) * 1.3 && (Math.abs(dx) > 55 || (Math.abs(dx) > 20 && velocity > .4))) choose(active + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
       }} onPointerCancel={() => { gesture.current = null; }}>
-        {services.map((item, index) => <article key={item.name} id={`service-panel-${index}`} className="cinematic-panel" data-state={active === index ? 'active' : outgoing === index ? 'outgoing' : 'hidden'} role="group" aria-roledescription="slide" aria-label={`${index + 1} of 4: ${item.name}`} aria-hidden={active !== index} inert={active !== index}>
-            <div className="service-description"><span className="service-copy-kicker"><span>0{index + 1}</span>{item.name}</span><h3>{item.label}</h3><p>{item.copy}</p><ul>{item.tags.map(tag => <li key={tag}>{tag}</li>)}</ul><a href="#contact" className="text-link service-enquiry">{item.cta}<span aria-hidden="true"><ArrowIcon /></span></a></div>
+        {services.map((item, index) => <div key={item.name} id={`service-panel-${index}`} className="cinematic-panel" data-state={active === index ? 'active' : outgoing === index ? 'outgoing' : 'hidden'} role="group" aria-roledescription="slide" aria-label={`${index + 1} of 4: ${item.name}`} aria-hidden={active !== index} inert={active !== index}>
+            <div className="service-description"><span className="service-copy-kicker"><span>0{index + 1}</span>{item.name}</span><h3>{item.label}</h3><p>{item.copy}</p><ul>{item.tags.map(tag => <li key={tag}>{tag}</li>)}</ul><a href={serviceDestinations[index]} className="text-link service-enquiry">{item.cta}<span aria-hidden="true"><ArrowIcon /></span></a></div>
             <div className="service-visual" onPointerMove={event => {
               if (!motion || event.pointerType !== 'mouse' || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
               const bounds = event.currentTarget.getBoundingClientRect();
@@ -121,7 +123,7 @@ export default function Services({ motion }: { motion: boolean }) {
               const scene = event.currentTarget.querySelector<HTMLElement>('.service-art-scene');
               if (scene) scene.style.transform = '';
             }}><div className="service-art-scene"><Visual index={index} /></div></div>
-        </article>)}
+        </div>)}
     </div>
     <div className="cinematic-navigation">
       <div className="cinematic-position"><span aria-hidden="true">0{active + 1}<small>/ 04</small></span><div className="cinematic-progress" aria-label="Choose a service">{services.map((item,index) => <button key={item.name} type="button" aria-label={`Show ${item.name}`} aria-controls={`service-panel-${index}`} aria-current={active === index ? 'step' : undefined} data-complete={index < active} onClick={() => choose(index,index < active ? -1 : 1)}><span /></button>)}</div></div>

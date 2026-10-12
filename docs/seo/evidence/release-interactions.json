@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-12",
+  "environment": "Final local production build; isolated Chrome",
+  "realFormSubmissions": 0,
+  "firstVisit": {
+    "film": "/asl-loading-burgundy-refined.mp4",
+    "inert": true,
+    "skipReleasesContent": true
+  },
+  "heroRobot": {
+    "canvasReady": true,
+    "phase": "tracking",
+    "pauseWorks": true
+  },
+  "mobileMenu": {
+    "closed": true,
+    "focusRestored": true
+  },
+  "carousel": {
+    "before": "1 of 4: Web experiences",
+    "after": "2 of 4: Apps & software",
+    "destination": "/services/mobile-app-development"
+  },
+  "process": {
+    "click": true,
+    "keyboard": true
+  },
+  "form": {
+    "unexpected2xxRetains": true,
+    "unexpected2xxLeadEvents": 0,
+    "acceptedLeadEvents": 1,
+    "acceptedResets": true
+  },
+  "projects": {
+    "beautyCount": 2,
+    "dialogOpens": true,
+    "iframe": "https://atelier-noir-salon.vercel.app/",
+    "escapeRemovesIframe": true
+  },
+  "transition": {
+    "destination": "/#contact",
+    "inert": false,
+    "intro": false,
+    "contactTop": 30.09375
+  },
+  "reducedMotion": {
+    "intro": false,
+    "filmRequests": 0,
+    "motionOff": true
+  },
+  "slowFirstVisit": {
+    "method": "Actual DevTools throttling: 150ms latency, 1638.4kbps down, CPU4; 390x844",
+    "timings": [
+      {
+        "present": false,
+        "time": 389.59999999962747
+      },
+      {
+        "present": true,
+        "time": 4404.199999999255
+      },
+      {
+        "present": false,
+        "time": 4709.89999999851
+      }
+    ],
+    "mainInert": false,
+    "videoResource": []
+  }
+}

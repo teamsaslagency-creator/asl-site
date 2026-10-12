@@ -19,13 +19,13 @@ export default function RobotArtwork({ replay, motion, onReady, onError }: Props
     const host=root.current!;
     let stopped=false,release=()=>{};
     const initialize=async () => {
-      const texture=await new THREE.TextureLoader().loadAsync('/robot-cutout.png');
+      const texture=await new THREE.TextureLoader().loadAsync('/robot-cutout.webp');
       if(stopped){texture.dispose();return;}
       texture.colorSpace=THREE.SRGBColorSpace;
       let renderer: THREE.WebGLRenderer;
       try {renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'high-performance'});}
       catch {texture.dispose();state.current.onError();return;}
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.75));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio,window.matchMedia('(max-width: 767px)').matches ? 1.25 : 1.75));
       renderer.setClearColor(0x000000,0);renderer.outputColorSpace=THREE.SRGBColorSpace;
       renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
       renderer.domElement.setAttribute('role','img');

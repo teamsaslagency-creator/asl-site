@@ -4,7 +4,11 @@ export const projects = [
   { id: 'noir', name: 'Atelier Noir', category: 'Grooming / Salon', text: 'A cinematic salon experience built around precision, atmosphere, and craft.', tags: 'Entrance film · Rituals · Editorial motion', url: 'https://atelier-noir-salon.vercel.app/', image: '/projects/noir.jpg' },
   { id: 'salon', name: 'Salon — Bold Beauty', category: 'Beauty / Salon', text: 'A light, expressive beauty website with visual service journeys and booking exploration.', tags: 'Light theme · Service showcase · Beauty', url: 'https://salon-omega-ashy.vercel.app/', image: '/projects/salon.jpg' },
   { id: 'burger', name: 'Burger Join', category: 'Food / Storefront', text: 'Bold food imagery, layered scroll storytelling, and an interactive concept menu.', tags: 'Scroll storytelling · Menu filters · Shopping bag', url: 'https://burger-join.vercel.app/', image: '/projects/burger.jpg' },
-];
+].map(project => ({
+  ...project,
+  kind: 'Studio showcase' as const,
+  imageAlt: `${project.name} ${project.category.toLowerCase()} website showcase with its visual design and navigation`,
+}));
 
 // Shared contact address for the site.
 export const contactEmail = 'contact@aslagency.dev';

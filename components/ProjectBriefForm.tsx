@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import ArrowIcon from './ArrowIcon';
 import { contactEmail, projectBriefEndpoint } from '@/lib/projects';
+import { emitMeasurement } from '@/lib/measurement';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
@@ -45,8 +46,17 @@ export default function ProjectBriefForm() {
         setStatus('error');
         return;
       }
+      const result: unknown = await response.json();
+      // Formspree's success contract is a JSON object with a string `next`.
+      // An HTTP 2xx alone cannot confirm that the provider accepted the brief.
+      if (!result || typeof result !== 'object' || Array.isArray(result)
+        || !('next' in result) || typeof result.next !== 'string'
+        || 'error' in result || 'errors' in result) {
+        throw new Error('Formspree did not confirm acceptance.');
+      }
       form.reset();
       setStatus('success');
+      emitMeasurement('contact_submit_success');
     } catch {
       setError('We could not confirm your brief was received. Your details are still here—please try again, or email us directly.');
       setStatus('error');
@@ -77,11 +87,11 @@ export default function ProjectBriefForm() {
           {status === 'sending' ? 'Preparing your brief…' : 'Prepare my project brief'} <span aria-hidden="true"><ArrowIcon /></span>
         </button>
       </fieldset>
-      <p className="contact-note">Share your idea with us. We’ll read your brief and get back to you by email.</p>
+      <p className="contact-note">Share your idea with us. We’ll read your brief and get back to you by email. Your brief is sent through Formspree; please leave out sensitive information.</p>
     </form>
     <div role="status" aria-live="polite" aria-atomic="true">
       {status === 'sending' && <p className="contact-note">Your brief is on its way to us…</p>}
-      {status === 'success' && <div className="brief-ready"><strong>Your idea is in good hands.</strong><p>Thanks for sharing it with us. We’ve received your project brief and will be in touch by email.</p></div>}
+      {status === 'success' && <div className="brief-ready"><strong>Your idea is in good hands.</strong><p>Your project brief has been submitted through Formspree. We’ll be in touch by email.</p></div>}
     </div>
     {status === 'error' && <div className="brief-ready" role="alert"><strong>Let’s give that another try.</strong><p>{error}</p><a className="text-link" href={`mailto:${contactEmail}`}>Email us directly <span aria-hidden="true"><ArrowIcon /></span></a></div>}
   </>;

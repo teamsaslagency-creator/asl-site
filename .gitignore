@@ -9,3 +9,15 @@ next-env.d.ts
 .vercel/
 concepts/
 *.log
+# Local browser captures, raw Lighthouse output and temporary regression logs.
+# The concise release summaries are retained as audit documentation.
+/docs/seo/evidence/*
+!/docs/seo/evidence/README.md
+!/docs/seo/evidence/release-mobile-summary.json
+!/docs/seo/evidence/release-interactions.json
+!/docs/seo/evidence/release-additional-browser.json
+!/docs/seo/evidence/release-entrance-cold-before.json
+!/docs/seo/evidence/release-entrance-cold.json
+!/docs/seo/evidence/release-production-bundles.json
+!/docs/seo/evidence/release-all-route-bundles.json
+!/docs/seo/evidence/release-live-hosts.json

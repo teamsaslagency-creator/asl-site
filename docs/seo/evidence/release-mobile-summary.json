@@ -1,0 +1,137 @@
+{
+  "lighthouseVersion": "13.4.0",
+  "method": "Full Node module; Chrome155 headless; local optimized production; mobile412x823DPR1.75; simulated150ms1638.4kbpsCPU4; one run perroute, home additionally repeated twice",
+  "results": [
+    {
+      "route": "home",
+      "performance": 54,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 5434.82565,
+      "tbtMs": 1381.195725,
+      "cls": 0,
+      "method": "Median of three final runs"
+    },
+    {
+      "route": "projects",
+      "performance": 88,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 3775.2192,
+      "tbtMs": 118.5,
+      "cls": 0,
+      "benchmarkIndex": 1767
+    },
+    {
+      "route": "services",
+      "performance": 91,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 3117.54,
+      "tbtMs": 176.635,
+      "cls": 0,
+      "benchmarkIndex": 1525.5
+    },
+    {
+      "route": "website-development",
+      "performance": 90,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 3472.4646,
+      "tbtMs": 118.38384999999994,
+      "cls": 0,
+      "benchmarkIndex": 1591
+    },
+    {
+      "route": "ecommerce-development",
+      "performance": 92,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 3197.172,
+      "tbtMs": 127,
+      "cls": 0,
+      "benchmarkIndex": 1617.5
+    },
+    {
+      "route": "mobile-app-development",
+      "performance": 88,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 3186.3096,
+      "tbtMs": 250.07739999999967,
+      "cls": 0,
+      "benchmarkIndex": 1598.5
+    },
+    {
+      "route": "ai-automation",
+      "performance": 94,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 3033.2144,
+      "tbtMs": 103.05359999999996,
+      "cls": 0,
+      "benchmarkIndex": 1590
+    },
+    {
+      "route": "custom-software",
+      "performance": 89,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 3190.7138000000004,
+      "tbtMs": 243,
+      "cls": 0,
+      "benchmarkIndex": 1178
+    },
+    {
+      "route": "seo-performance",
+      "performance": 93,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 3060.5622000000003,
+      "tbtMs": 130.14055000000008,
+      "cls": 0,
+      "benchmarkIndex": 1978
+    }
+  ],
+  "homeFinalRuns": [
+    {
+      "name": "home-final-1",
+      "performance": 66,
+      "lcpMs": 5432.5905,
+      "tbtMs": 519.9999999999998,
+      "cls": 0,
+      "benchmarkIndex": 1718.5
+    },
+    {
+      "name": "home-final-2",
+      "performance": 54,
+      "lcpMs": 5434.82565,
+      "tbtMs": 1381.195725,
+      "cls": 0,
+      "benchmarkIndex": 1332
+    },
+    {
+      "name": "home-final-3",
+      "performance": 48,
+      "lcpMs": 5507.889000000001,
+      "tbtMs": 3009,
+      "cls": 0,
+      "benchmarkIndex": 1135
+    }
+  ],
+  "limits": [
+    "Local simulated mobile lab; not deployed or field CWV",
+    "Non-home route code unchanged by final entrance-only safeguard; their audits retained",
+    "Home benchmark index varied1135–1718.5; no statistically established speedup or regression",
+    "Actual cold-cache DevTools check separately verifies late-hydration film bypass"
+  ]
+}

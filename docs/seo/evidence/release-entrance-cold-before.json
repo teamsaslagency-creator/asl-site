@@ -1,0 +1,25 @@
+{
+  "configured": "DevTools150ms latency,1638.4kbps down,CPU4;390x844;fresh Chrome profile and cache disabled",
+  "timeline": [
+    {
+      "present": false,
+      "time": 347.59999999962747
+    },
+    {
+      "present": true,
+      "time": 6612.699999999255
+    },
+    {
+      "present": false,
+      "time": 19781.599999999627
+    }
+  ],
+  "mainInert": false,
+  "film": [
+    {
+      "duration": 11282.199999999255,
+      "bytes": 2279061
+    }
+  ],
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36"
+}

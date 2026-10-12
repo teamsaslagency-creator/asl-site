@@ -1,0 +1,56 @@
+[
+  {
+    "path": "/",
+    "raw": 629217,
+    "gzip": 192946,
+    "serverOrRendererCodeInInitialChunks": []
+  },
+  {
+    "path": "/projects",
+    "raw": 579351,
+    "gzip": 178533,
+    "serverOrRendererCodeInInitialChunks": []
+  },
+  {
+    "path": "/services",
+    "raw": 576661,
+    "gzip": 177730,
+    "serverOrRendererCodeInInitialChunks": []
+  },
+  {
+    "path": "/services/website-development",
+    "raw": 576661,
+    "gzip": 177730,
+    "serverOrRendererCodeInInitialChunks": []
+  },
+  {
+    "path": "/services/ecommerce-development",
+    "raw": 576661,
+    "gzip": 177730,
+    "serverOrRendererCodeInInitialChunks": []
+  },
+  {
+    "path": "/services/mobile-app-development",
+    "raw": 576661,
+    "gzip": 177730,
+    "serverOrRendererCodeInInitialChunks": []
+  },
+  {
+    "path": "/services/ai-automation",
+    "raw": 576661,
+    "gzip": 177730,
+    "serverOrRendererCodeInInitialChunks": []
+  },
+  {
+    "path": "/services/custom-software",
+    "raw": 576661,
+    "gzip": 177730,
+    "serverOrRendererCodeInInitialChunks": []
+  },
+  {
+    "path": "/services/seo-performance",
+    "raw": 576661,
+    "gzip": 177730,
+    "serverOrRendererCodeInInitialChunks": []
+  }
+]
