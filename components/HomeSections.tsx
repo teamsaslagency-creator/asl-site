@@ -29,7 +29,7 @@ export default function HomeSections({ motion, serviceDirectory }: { motion: boo
       <div className="studio-composition">
       <h2 id="studio-title" className="studio-manifesto"><span>Beautiful to use.</span><span>Intelligent <em>by design.</em></span></h2>
       <figure className="studio-robot-scene"><img src="/asl-robot-interface-v1.webp" alt="The ASL robot carefully shaping a floating glass interface" width={1254} height={1254} loading="lazy" /><figcaption>Imagination, made tangible.</figcaption></figure>
-      <div className="studio-introduction"><div><p>We bring imagination and engineering into the same conversation.</p><p>ASL creates distinctive websites, e-commerce experiences, and mobile apps. We also build AI agents and connected workflows that help businesses turn everyday complexity into useful software.</p><a href="#capabilities" className="text-link">Explore our capabilities <span aria-hidden="true"><ArrowIcon down /></span></a></div></div>
+      <div className="studio-introduction"><div><p>We bring imagination and engineering into the same conversation.</p><p>ASL is a creative technology and software development agency in Sri Lanka. Also known as ASL Agency, we build distinctive websites, e-commerce experiences, mobile apps and connected workflows.</p><a href="#capabilities" className="text-link">Explore our capabilities <span aria-hidden="true"><ArrowIcon down /></span></a></div></div>
       </div>
     </section>
 

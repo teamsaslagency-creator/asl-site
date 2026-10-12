@@ -39,6 +39,31 @@ test('each metadata object carries complete social and canonical fields', () => 
   assert.equal(meta.twitter.card, 'summary_large_image');
   assert.equal(meta.twitter.images[0].url, meta.openGraph.images[0].url);
 });
+
+test('ASL stays the primary brand with one approved secondary alias and stable entity references', () => {
+  const { seo, businessGraph, organizationId, websiteId } = load('lib/seo.ts');
+  const entities = JSON.parse(JSON.stringify(businessGraph))['@graph'];
+  assert.equal(seo.name, 'ASL');
+  assert.equal(organizationId, 'https://www.aslagency.dev/#organization');
+  assert.equal(websiteId, 'https://www.aslagency.dev/#website');
+  for (const type of ['Organization', 'WebSite']) {
+    const matches = entities.filter(entity => entity['@type'] === type);
+    assert.equal(matches.length, 1, `one ${type} entity`);
+    assert.equal(matches[0].name, 'ASL');
+    assert.equal(matches[0].alternateName, 'ASL Agency');
+    assert.equal(matches[0].url, 'https://www.aslagency.dev/');
+  }
+  const organization = entities.find(entity => entity['@type'] === 'Organization');
+  const website = entities.find(entity => entity['@type'] === 'WebSite');
+  assert.equal(organization['@id'], organizationId);
+  assert.equal(organization.logo, 'https://www.aslagency.dev/asl-logo.svg');
+  assert.equal(organization.email, 'contact@aslagency.dev');
+  assert.equal(website['@id'], websiteId);
+  assert.equal(website.publisher['@id'], organizationId);
+  for (const entity of entities) {
+    for (const inventedField of ['address', 'telephone', 'sameAs', 'foundingDate', 'aggregateRating', 'review']) assert.ok(!Object.hasOwn(entity, inventedField));
+  }
+});
 test('JSON-LD cannot break out of its script and preserves data', () => {
   const { serializeJsonLd } = load('lib/seo.ts');
   const input = { name: '</script><script>alert(1)</script>' };
