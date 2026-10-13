@@ -10,7 +10,7 @@ const source = ts.transpileModule(readFileSync('components/LoadingEntrance.tsx',
   compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, jsx: ts.JsxEmit.ReactJSX },
 }).outputText;
 
-async function mountEntrance({ now = 500, effectiveType = '4g', reducedMotion = false, hash = '', seen = false, saveData = false } = {}) {
+async function mountEntrance({ now = 500, effectiveType = '4g', reducedMotion = false, hash = '', seen = false, saveData = false, navigationType = 'navigate' } = {}) {
   const effects = [], timers = [], leaving = [], writes = [];
   let plays = 0, completions = 0;
   const media = { pause() {}, play() { plays++; return Promise.resolve(); }, addEventListener() {}, removeEventListener() {} };
@@ -26,7 +26,7 @@ async function mountEntrance({ now = 500, effectiveType = '4g', reducedMotion = 
     module, exports: module.exports,
     document: { body, querySelector: () => content },
     navigator: { connection: { effectiveType, saveData } },
-    performance: { now: () => now },
+    performance: { now: () => now, getEntriesByType: () => navigationType ? [{ type: navigationType }] : [] },
     location: { hash },
     sessionStorage: { getItem: () => seen ? 'true' : null, setItem: (key, value) => writes.push([key, value]) },
     setTimeout: (callback, delay) => { const timer = { callback, delay }; timers.push(timer); return timer; },
@@ -80,4 +80,24 @@ test('slow reported connection types bypass without a film download', async () =
 
 test('existing reduced-motion, deep-link, repeat-visit and data-saving bypasses remain', async () => {
   for (const options of [{ reducedMotion: true }, { hash: '#contact' }, { seen: true }, { saveData: true }]) assertBypassed(await mountEntrance(options));
+});
+
+test('refresh replays the original burgundy film even after it has already been seen', async () => {
+  const entrance = await mountEntrance({ navigationType: 'reload', seen: true });
+  assert.equal(entrance.media.src, '/asl-loading-burgundy-refined.mp4');
+  assert.equal(entrance.plays, 1);
+  assert.deepEqual(entrance.leaving, []);
+  assert.ok(entrance.timers.some(timer => timer.delay === 12000), 'refresh keeps the escape timer');
+  entrance.cleanup();
+});
+
+test('an explicit refresh replays despite timing, connection or homepage hash', async () => {
+  const entrance = await mountEntrance({ navigationType: 'reload', seen: true, now: 5000, effectiveType: '3g', hash: '#studio' });
+  assert.equal(entrance.media.src, '/asl-loading-burgundy-refined.mp4');
+  assert.equal(entrance.plays, 1);
+  entrance.cleanup();
+});
+
+test('refresh still respects reduced motion and the visitor data-saving preference', async () => {
+  for (const options of [{ reducedMotion: true }, { saveData: true }]) assertBypassed(await mountEntrance({ navigationType: 'reload', seen: true, ...options }));
 });

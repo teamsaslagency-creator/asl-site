@@ -47,10 +47,12 @@ export default function LoadingEntrance({ onComplete }: Props) {
     try { alreadySeen = sessionStorage.getItem('asl:intro-seen') === 'true'; } catch { /* Play normally without storage. */ }
     const connection = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
     const slowConnection = ['slow-2g', '2g', '3g'].includes(connection?.effectiveType ?? '');
-    // Keep the approved fast first-visit film. Late hydration must not interrupt
-    // an already usable page; slow connections must not download the entrance.
-    if (preference.matches || alreadySeen || location.hash || connection?.saveData
-      || performance.now() > 3000 || slowConnection) finish(true);
+    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
+    const isRefresh = navigation?.type === 'reload';
+    // An explicit refresh replays the original film. Ordinary navigation keeps
+    // the existing bypasses; accessibility and data-saving preferences always win.
+    if (preference.matches || connection?.saveData
+      || (!isRefresh && (alreadySeen || location.hash || performance.now() > 3000 || slowConnection))) finish(true);
     else {
       media.src = '/asl-loading-burgundy-refined.mp4';
       void media.play().catch(() => { if (!disposed) finish(); });
