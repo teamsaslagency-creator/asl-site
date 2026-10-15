@@ -10,10 +10,10 @@ export const contentType = 'image/png';
 export default async function SocialImage() {
   const logo = await readFile(join(process.cwd(), 'public/asl-logo.svg'));
   return new ImageResponse(
-    <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '58px 72px', background: 'linear-gradient(115deg, #080709 30%, #650b28)', color: '#f3ede8' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}><img src={`data:image/svg+xml;base64,${logo.toString('base64')}`} width={86} height={82} alt="" /><span style={{ fontSize: 24 }}>Creative technology / Sri Lanka</span></div>
-      <div style={{ display: 'flex', flexDirection: 'column', fontSize: 112, fontWeight: 700, letterSpacing: '-6px', lineHeight: 1 }}><span>Digital.</span><span>Alive.</span></div>
-      <div style={{ display: 'flex', fontSize: 26, color: '#e0c4d0' }}>Websites. Software. AI automation.</div>
+    // Keep the original mark inside the central square so it remains legible
+    // when messaging clients crop the wide social image to a thumbnail.
+    <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'radial-gradient(ellipse at center, #3a1225 0%, #130b11 65%, #080709 100%)' }}>
+      <img src={`data:image/svg+xml;base64,${logo.toString('base64')}`} width={400} height={378} alt="" />
     </div>, size,
   );
 }

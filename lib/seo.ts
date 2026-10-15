@@ -20,8 +20,8 @@ export const seo = {
   description: 'ASL is a creative technology and software development agency in Sri Lanka, building websites, e-commerce, mobile apps and AI automation for businesses.',
   email: contactEmail,
   logo: '/asl-logo.svg',
-  socialImage: '/opengraph-image',
-  socialImageAlt: 'ASL — Digital. Alive. Websites, software and AI automation from Sri Lanka.',
+  socialImage: '/opengraph-image?v=asl-brand-2',
+  socialImageAlt: 'ASL logo on a dark burgundy background.',
 } as const;
 
 // Build-time policy; never derive canonical URLs from VERCEL_URL or a request host.
